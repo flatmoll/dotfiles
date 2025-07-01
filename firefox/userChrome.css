@@ -1,0 +1,47 @@
+#nav-bar {
+    max-height: 32px !important;
+    background-color: #303030 !important;
+}
+
+#TabsToolbar {
+    max-height: 26px !important;
+    background-color: #1c1b19 !important;
+}
+
+.tab-close-button,
+#sidebar-box #sidebar-header,
+#tabs-newtab-button, .titlebar-spacer,
+.titlebar-buttonbox-container {
+    display: none !important;
+}
+
+#tabbrowser-tabs,
+#tabbrowser-tabs > #tabbrowser-arrowscrollbox,
+.tabbrowser-tabs .tabbrowser-tab label {
+    min-height: var(--tab-min-height) !important;
+    max-height: var(--tab-min-height) !important;
+    color: #fce8c3 !important;
+}
+
+.tabbrowser-tab[fadein] {
+    max-width: 100vw !important;
+}
+
+.tab-background label {
+    background-color: #1c1b19 !important;
+    color: #fce8c3 !important;
+}
+
+.tab-background:is([selected], [multiselected]) {
+    background-color: #303030 !important;
+}
+
+:root {
+     --tab-min-height: 32px !important;
+     --tab-border-radius: 0 !important;
+     --arrowpanel-border-radius: 0 !important;
+     --arrowpanel-menuitem-padding: 4px !important;
+     --arrowpanel-menuitem-border-radius: 0 !important;
+     --toolbarbutton-border-radius: 0 !important;
+     --toolbarbutton-inner-padding: 4px !important;
+}
