@@ -1,0 +1,15 @@
+This custom stylesheet aims to relax the default Firefox large-floating-boxes UI design.
+
+Changes:
+1. Minimized rounding
+2. Reduced tab and navbar height
+3. Toggled dynamically sized tabs
+4. Reduced menu and icon spacing
+5. Concealed sidebar title
+6. Concealed tabs toolbar icons
+
+Tested resolutions:
+* 1920x1200
+* 1920x1080
+
+To report broken layout, please open an issue in this repository and mention your browser window resolution.
