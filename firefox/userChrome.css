@@ -12,6 +12,7 @@
 #unified-extensions-button,
 #sidebar-box #sidebar-header,
 #tabs-newtab-button, .titlebar-spacer,
+.private-browsing-indicator-with-label,
 .titlebar-buttonbox-container {
     display: none !important;
 }
