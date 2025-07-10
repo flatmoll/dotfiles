@@ -14,7 +14,7 @@ set shiftwidth=8
 set autoindent smartindent
 set noexpandtab
 set nocompatible
-set mouse=a
+set mouse=v
 set history=10000
 set enc=utf-8
 set fenc=utf-8
