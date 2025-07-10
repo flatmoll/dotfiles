@@ -1,0 +1,44 @@
+set imap_user	= email
+set imap_pass	= 'password'
+
+set folder	= imaps://imap.example.com/
+set spoolfile	= +INBOX
+set mbox	= +INBOX
+set record	= +Sent
+set postponed	= +Drafts
+set trash	= +Trash
+
+set smtp_url	= smtp://$imap_user@smtp.example.com:587
+set from	= $imap_user
+set smtp_pass	= $imap_pass
+set realname	= "Name Surname"
+
+set crypt_opportunistic_encrypt	= yes
+set crypt_autosign		= yes
+
+set ssl_force_tls	= yes 
+set editor		= `echo \$EDITOR`
+set edit_headers	= yes
+set charset		= UTF-8
+set use_from		= yes
+unset use_domain
+
+color hdrdefault blue black
+color quoted blue black
+color signature blue black
+color attachment red black
+color prompt brightmagenta black
+color message brightred black
+color error brightred black
+color indicator black red
+color status brightblue black 
+color tree white black
+color normal white black
+color markers red black
+color search white black
+color tilde brightmagenta black
+color index blue black ~F
+color index red black "~N|~O"
+
+bind browser <F2> check-new
+bind index <F2> imap-fetch-mail
