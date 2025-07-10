@@ -5,7 +5,7 @@
 
 #TabsToolbar {
     max-height: 26px !important;
-    background-color: #1c1b19 !important;
+    background-color: #181818 !important;
 }
 
 .tab-close-button,
@@ -22,7 +22,7 @@
 .tabbrowser-tabs .tabbrowser-tab label {
     min-height: var(--tab-min-height) !important;
     max-height: var(--tab-min-height) !important;
-    color: #fce8c3 !important;
+    color: #dcdcdc !important;
 }
 
 .tabbrowser-tab[fadein] {
@@ -30,7 +30,7 @@
 }
 
 .tab-background label {
-    background-color: #1c1b19 !important;
+    background-color: #181818 !important;
     color: #fce8c3 !important;
 }
 
