@@ -1,0 +1,141 @@
+set $mod Mod4
+set $left h
+set $down j
+set $up k
+set $right l
+set $term foot
+set $menu wmenu-run -f "Adwaita Sans Normal 12" -n "#dcdcdc" -N "#262626" -S "#1a5fb4"
+
+xwayland disable
+default_border none
+font pango:adwaita-fonts Medium 12
+client.focused #181818 #262626 #dcdcdc #262626 #181818
+
+for_window [title="^Rename.*"] floating enable
+for_window [title="^File Operation.*"] floating enable
+for_window [title="^Confirm to.*"] floating enable
+for_window [app_id="xarchiver"] floating enable
+for_window [app_id="buffer"] floating enable, resize set 40ppt 80ppt
+
+exec clipse -listen
+exec swayidle -w timeout 359 'swaylock -f -c 262626' timeout 360 'systemctl suspend'
+
+input type:touchpad {
+    dwt enabled
+    tap enabled
+    drag_lock disabled
+    natural_scroll enabled
+    middle_emulation enabled
+    pointer_accel 0.75
+}
+
+input * {
+    xkb_layout "us,ru"
+    xkb_options "grp:alt_space_toggle"
+}
+
+input type:touch events disabled
+output * bg /home/moll/.config/desktop.jpeg fill
+output eDP-1 scale 1.25
+
+bindsym $mod+Return exec $term
+bindsym $mod+Shift+q kill
+bindsym $mod+d exec $menu
+floating_modifier $mod normal
+bindsym $mod+Shift+c reload
+bindsym $mod+Shift+e exec swaynag -t warning -m 'Logout?' -B 'Exit' 'swaymsg exit'
+
+bindsym $mod+$left focus left
+bindsym $mod+$down focus down
+bindsym $mod+$up focus up
+# bindsym $mod+$right focus right # mod+l lockscreen
+bindsym $mod+Left focus left
+bindsym $mod+Down focus down
+bindsym $mod+Up focus up
+bindsym $mod+Right focus right
+bindsym $mod+Shift+$left move left
+bindsym $mod+Shift+$down move down
+bindsym $mod+Shift+$up move up
+bindsym $mod+Shift+$right move right
+bindsym $mod+Shift+Left move left
+bindsym $mod+Shift+Down move down
+bindsym $mod+Shift+Up move up
+bindsym $mod+Shift+Right move right
+
+bindsym $mod+1 workspace number 1
+bindsym $mod+2 workspace number 2
+bindsym $mod+3 workspace number 3
+bindsym $mod+4 workspace number 4
+bindsym $mod+5 workspace number 5
+bindsym $mod+6 workspace number 6
+bindsym $mod+7 workspace number 7
+bindsym $mod+8 workspace number 8
+bindsym $mod+9 workspace number 9
+bindsym $mod+0 workspace number 10
+bindsym $mod+Shift+1 move container to workspace number 1
+bindsym $mod+Shift+2 move container to workspace number 2
+bindsym $mod+Shift+3 move container to workspace number 3
+bindsym $mod+Shift+4 move container to workspace number 4
+bindsym $mod+Shift+5 move container to workspace number 5
+bindsym $mod+Shift+6 move container to workspace number 6
+bindsym $mod+Shift+7 move container to workspace number 7
+bindsym $mod+Shift+8 move container to workspace number 8
+bindsym $mod+Shift+9 move container to workspace number 9
+bindsym $mod+Shift+0 move container to workspace number 10
+
+bindsym $mod+b splith
+bindsym $mod+v splitv
+bindsym $mod+s layout stacking
+bindsym $mod+w layout tabbed
+bindsym $mod+e layout toggle split
+bindsym $mod+f fullscreen
+bindsym $mod+Shift+space floating toggle
+bindsym $mod+space focus mode_toggle
+bindsym $mod+a focus parent
+bindsym $mod+Shift+minus move scratchpad
+bindsym $mod+minus scratchpad show
+
+mode "resize" {
+    bindsym $left resize shrink width 10px
+    bindsym $down resize grow height 10px
+    bindsym $up resize shrink height 10px
+    bindsym $right resize grow width 10px
+    bindsym Left resize shrink width 10px
+    bindsym Down resize grow height 10px
+    bindsym Up resize shrink height 10px
+    bindsym Right resize grow width 10px
+    bindsym Return mode "default"
+    bindsym Escape mode "default"
+}
+bindsym $mod+r mode "resize"
+
+bindsym $mod+l exec bash -c 'swaylock -f -c 262626; sleep 1; systemctl suspend'
+bindsym $mod+i exec swaymsg input type:touch events toggle
+bindsym --locked XF86AudioMute exec wpctl set-mute @DEFAULT_AUDIO_SINK@ toggle
+bindsym --locked XF86AudioLowerVolume exec wpctl set-volume @DEFAULT_AUDIO_SINK@ 5%-
+bindsym --locked XF86AudioRaiseVolume exec wpctl set-volume -l 1.5 @DEFAULT_AUDIO_SINK@ 5%+
+bindsym --locked XF86AudioMicMute exec wpctl set-mute @DEFAULT_AUDIO_SOURCE@ toggle
+bindsym XF86MonBrightnessDown exec brightnessctl set 5%-
+bindsym XF86MonBrightnessUp exec brightnessctl set 5%+
+bindsym Mod4+Shift+S exec grim ~/buff/$(date +%s).png
+bindsym Ctrl+Mod4+Shift+S exec slurp | grim -g - ~/buff/$(date +%s).png
+bindsym Alt+Mod4+Shift+S exec slurp | grim -g - - | tee ~/buff/$(date +%s).png | wl-copy
+bindsym $mod+Shift+grave exec $term -a buffer clipse
+bindsym Ctrl+Alt+Tab exec pidof wvkbd-mobintl &> /dev/null && killall wvkbd-mobintl || wvkbd-mobintl
+bindsym $mod+slash exec $term -a vim vim
+bindsym $mod+period exec thunar
+bindsym $mod+comma exec librewolf
+
+bar {
+    mode hide
+    position top
+    status_command i3status-rs    
+    colors {
+        statusline #dcdcdc
+        background #262626
+        inactive_workspace #262626 #262626 #dcdcdc
+	focused_workspace #1a5fb4 #1a5fb4 #dcdcdc
+    }
+}
+
+include /etc/sway/config.d/*
