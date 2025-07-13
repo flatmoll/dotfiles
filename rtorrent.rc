@@ -1,0 +1,30 @@
+throttle.min_peers.normal.set		= 1
+throttle.max_peers.normal.set		= 1000
+throttle.min_peers.seed.set		= -1
+throttle.max_peers.seed.set		= -1
+throttle.max_uploads.set		= 20
+throttle.global_down.max_rate.set_kb	= 0
+throttle.global_up.max_rate.set_kb	= 0
+
+protocol.encryption.set		= allow_incoming,try_outgoing,enable_retry
+pieces.hash.on_completion	= 1
+pieces.sync.always_safe.set	= 1
+network.port_random.set		= no
+network.port_range.set		= 2920-2920
+dht.mode.set			= on
+dht.port.set			= 2921
+protocol.pex.set		= yes
+trackers.use_udp.set		= no
+
+system.file.allocate	= 1
+directory.default.set	= ~/seed
+session.path.set	= ~/.local/rtorrent.session
+
+ui.color.title.set	= "bold black on white"
+ui.color.focus.set	= "reverse"
+ui.color.complete.set	= "green"
+ui.color.seeding.set	= "blue"
+ui.color.stopped.set	= "red"
+ui.color.queued.set	= "cyan"
+ui.color.leeching.set	= "yellow"
+ui.color.incomplete.set	= "cyan"
