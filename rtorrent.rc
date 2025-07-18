@@ -3,8 +3,8 @@ throttle.max_peers.normal.set		= 1000
 throttle.min_peers.seed.set		= -1
 throttle.max_peers.seed.set		= -1
 throttle.max_uploads.set		= 20
-throttle.global_down.max_rate.set_kb	= 0
-throttle.global_up.max_rate.set_kb	= 0
+throttle.global_down.max_rate.set_kb	= 204800
+throttle.global_up.max_rate.set_kb	= 102400
 
 protocol.encryption.set		= allow_incoming,try_outgoing,enable_retry
 pieces.hash.on_completion	= 1
