@@ -149,7 +149,6 @@ bindsym $mod+Shift+grave	exec $term -a buffer clipse
 bindsym Ctrl+Alt+Tab		exec pidof wvkbd-mobintl &> /dev/null \
 				&& killall wvkbd-mobintl || wvkbd-mobintl
 
-
 bar {
     mode hide
     position top
