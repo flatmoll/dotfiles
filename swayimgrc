@@ -1,0 +1,20 @@
+[general]
+mode	= gallery
+size	= image
+
+[viewer]
+history	= 100
+preload	= 100
+
+[gallery]
+size	= 220
+cache	= 100
+preload	= yes
+pstore	= yes
+
+[list]
+all	= yes
+
+[keys.viewer]
+comma	= prev_file
+period	= next_file
