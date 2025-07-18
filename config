@@ -14,6 +14,7 @@ client.focused #181818 #262626 #dcdcdc #262626 #181818
 for_window [title="^Rename.*"] floating enable
 for_window [title="^File Operation.*"] floating enable
 for_window [title="^Confirm to.*"] floating enable
+for_window [title="Picture-in-Picture"] floating enable
 for_window [app_id="xarchiver"] floating enable
 for_window [app_id="buffer"] floating enable, resize set 40ppt 80ppt
 
@@ -117,11 +118,12 @@ bindsym --locked XF86AudioRaiseVolume exec wpctl set-volume -l 1.5 @DEFAULT_AUDI
 bindsym --locked XF86AudioMicMute exec wpctl set-mute @DEFAULT_AUDIO_SOURCE@ toggle
 bindsym XF86MonBrightnessDown exec brightnessctl set 5%-
 bindsym XF86MonBrightnessUp exec brightnessctl set 5%+
-bindsym Mod4+Shift+S exec grim ~/buff/$(date +%s).png
-bindsym Ctrl+Mod4+Shift+S exec slurp | grim -g - ~/buff/$(date +%s).png
-bindsym Alt+Mod4+Shift+S exec slurp | grim -g - - | tee ~/buff/$(date +%s).png | wl-copy
+bindsym $mod+Shift+S exec grim ~/buff/$(date +%s).png
+bindsym Ctrl+$mod+Shift+S exec slurp | grim -g - ~/buff/$(date +%s).png
+bindsym Alt+$mod+Shift+S exec slurp | grim -g - - | tee ~/buff/$(date +%s).png | wl-copy
 bindsym $mod+Shift+grave exec $term -a buffer clipse
 bindsym Ctrl+Alt+Tab exec pidof wvkbd-mobintl &> /dev/null && killall wvkbd-mobintl || wvkbd-mobintl
+bindsym $mod+Tab exec gsimplecal
 bindsym $mod+slash exec $term -a vim vim
 bindsym $mod+period exec thunar
 bindsym $mod+comma exec librewolf
