@@ -15,6 +15,9 @@ pstore	= yes
 [list]
 all	= yes
 
+[info]
+show	= no
+
 [keys.viewer]
 comma	= prev_file
 period	= next_file
