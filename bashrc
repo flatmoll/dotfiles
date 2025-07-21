@@ -20,8 +20,6 @@ alias grep='grep --color=auto'
 alias p='sudo cupsd && sudo avahi-daemon'
 alias pg='sudo systemctl start postgresql && \
 	sudo -i -u postgres'
-alias mcserv='cd ~/minecraft; \
-	java/bin/java -jar ~/minecraft/server.jar'
 
 alias bt='sudo tlp bat'
 alias ac='sudo tlp ac'
